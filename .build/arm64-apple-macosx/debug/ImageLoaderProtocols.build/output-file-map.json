@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/master.swiftdeps"
+  },
+  "/Users/fatihsahin/ImageLoaderProtocols/Sources/ImageLoaderProtocols/ImageLoaderProtocols.swift": {
+    "dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.d",
+    "object": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.swift.o",
+    "swiftmodule": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols~partial.swiftmodule",
+    "swift-dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.swiftdeps"
+  },
+  "/Users/fatihsahin/ImageLoaderProtocols/Sources/ImageLoaderProtocols/Protocols.swift": {
+    "dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/Protocols.d",
+    "object": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/Protocols.swift.o",
+    "swiftmodule": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/Protocols~partial.swiftmodule",
+    "swift-dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/Protocols.swiftdeps"
+  }
+}

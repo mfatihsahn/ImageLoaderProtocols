@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/master.swiftdeps"
+  },
+  "/Users/fatihsahin/ImageLoaderProtocols/Tests/ImageLoaderProtocolsTests/ImageLoaderProtocolsTests.swift": {
+    "dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.d",
+    "object": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.swift.o",
+    "swiftmodule": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.swiftdeps"
+  }
+}

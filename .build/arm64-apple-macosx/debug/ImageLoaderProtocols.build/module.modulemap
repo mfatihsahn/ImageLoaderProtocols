@@ -1,0 +1,4 @@
+module ImageLoaderProtocols {
+    header "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols-Swift.h"
+    requires objc
+}

@@ -6,28 +6,13 @@ import PackageDescription
 let package = Package(
     name: "ImageLoaderProtocols",
     platforms: [
-        .iOS(.v12),
-        .macOS(.v10_13),
+        .iOS(.v13)
     ],
     products: [
-        // Kütüphanenizi dış dünyaya sunuyorsunuz:
-        .library(
-            name: "ImageLoaderProtocols",
-            targets: ["ImageLoaderProtocols"]
-        ),
-    ],
-    dependencies: [
-        // Burada harici paketlere bağımlılıklarınızı tanımlayabilirsiniz.
-        // .package(url: "https://github.com/some/Dependency.git", from: "1.0.0"),
+        .library(name: "ImageLoaderProtocols", targets: ["ImageLoaderProtocols"])
     ],
     targets: [
-        .target(
-            name: "ImageLoaderProtocols",
-            dependencies: []
-        ),
-        .testTarget(
-            name: "ImageLoaderProtocolsTests",
-            dependencies: ["ImageLoaderProtocols"]
-        ),
+        .target(name: "ImageLoaderProtocols", dependencies: []),
+        .testTarget(name: "ImageLoaderProtocolsTests", dependencies: ["ImageLoaderProtocols"])
     ]
 )
