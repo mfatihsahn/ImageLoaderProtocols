@@ -1,0 +1,4 @@
+module ImageLoaderProtocolsPackageTests {
+    header "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/ImageLoaderProtocolsPackageTests-Swift.h"
+    requires objc
+}

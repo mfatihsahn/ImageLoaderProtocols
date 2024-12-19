@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module": ["<ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module>"]
+  "ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.module": ["<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.module>"]
+  "ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.test": ["<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+  "ImageLoaderProtocolsTests-arm64-apple-macosx15.0-debug.module": ["<ImageLoaderProtocolsTests-arm64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module>"]
+  "test": ["<ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module>","<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.test>","<ImageLoaderProtocolsTests-arm64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/fatihsahin/ImageLoaderProtocols/Sources/ImageLoaderProtocols/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/fatihsahin/ImageLoaderProtocols/Tests/ImageLoaderProtocolsTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/fatihsahin/ImageLoaderProtocols/Sources/ImageLoaderProtocols/ImageLoaderProtocols.swift"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/sources"]
+    description: "Write auxiliary file /Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/sources"
+
+  "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.derived/runner.swift"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/sources"
+
+  "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.derived/runner.swift"]
+
+  "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/runner.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.swift.o"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.product/Objects.LinkFileList"
+
+  "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/fatihsahin/ImageLoaderProtocols/Tests/ImageLoaderProtocolsTests/ImageLoaderProtocolsTests.swift"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/sources"]
+    description: "Write auxiliary file /Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/sources"
+
+  "/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocols.swiftmodule"]
+    outputs: ["<ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module>"]
+
+  "<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/runner.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsPackageTests.swiftmodule"]
+    outputs: ["<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.module>"]
+
+  "<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.test>":
+    tool: phony
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.xctest/Contents/MacOS/ImageLoaderProtocolsPackageTests"]
+    outputs: ["<ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+
+  "<ImageLoaderProtocolsTests-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsTests.swiftmodule"]
+    outputs: ["<ImageLoaderProtocolsTests-arm64-apple-macosx15.0-debug.module>"]
+
+  "C.ImageLoaderProtocols-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/Sources/ImageLoaderProtocols/ImageLoaderProtocols.swift","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/sources"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocols.swiftmodule"]
+    description: "Compiling Swift Module 'ImageLoaderProtocols' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ImageLoaderProtocols","-emit-dependencies","-emit-module","-emit-module-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocols.swiftmodule","-output-file-map","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/sources","-I","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j11","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols-Swift.h","-color-diagnostics","-swift-version","6","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","imageloaderprotocols"]
+
+  "C.ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.derived/runner.swift","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsTests.swiftmodule","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/sources"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/runner.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'ImageLoaderProtocolsPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ImageLoaderProtocolsPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsPackageTests.swiftmodule","-output-file-map","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/sources","-I","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j11","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/ImageLoaderProtocolsPackageTests-Swift.h","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","imageloaderprotocols"]
+
+  "C.ImageLoaderProtocolsPackageTests-arm64-apple-macosx15.0-debug.test":
+    tool: shell
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocols.build/ImageLoaderProtocols.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.build/runner.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.xctest/Contents/MacOS/ImageLoaderProtocolsPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.xctest/Contents/MacOS/ImageLoaderProtocolsPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug","-o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.xctest/Contents/MacOS/ImageLoaderProtocolsPackageTests","-module-name","ImageLoaderProtocolsPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsPackageTests.product/Objects.LinkFileList","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocols.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsTests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.ImageLoaderProtocolsTests-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/Tests/ImageLoaderProtocolsTests/ImageLoaderProtocolsTests.swift","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocols.swiftmodule","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/sources"]
+    outputs: ["/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/ImageLoaderProtocolsTests.swift.o","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsTests.swiftmodule"]
+    description: "Compiling Swift Module 'ImageLoaderProtocolsTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ImageLoaderProtocolsTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules/ImageLoaderProtocolsTests.swiftmodule","-output-file-map","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ImageLoaderProtocolsTests.build/sources","-I","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-enable-batch-mode","-index-store-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j11","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/fatihsahin/ImageLoaderProtocols/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","6","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","imageloaderprotocols"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/fatihsahin/ImageLoaderProtocols/Sources/ImageLoaderProtocols/","/Users/fatihsahin/ImageLoaderProtocols/Tests/ImageLoaderProtocolsTests/","/Users/fatihsahin/ImageLoaderProtocols/Package.swift","/Users/fatihsahin/ImageLoaderProtocols/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
